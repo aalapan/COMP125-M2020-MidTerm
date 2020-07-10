@@ -120,6 +120,57 @@ function addParagraphMilos()
     return false;   
 }
 
+function addParagraphHydra()
+
+    {let hydra = document.getElementById("Hydra");
+    
+    if (hydra)
+    {
+        let newHydra = document.createElement("p");
+        newHydra.textContent = `The first thing you'll notice on this beautiful island is the lack of cars — and buses, motorcycles, or other wheeled vehicles, as well as high rises. The winding little streets full of beautiful 18th-century mansions, churches, cathedrals, museums and art galleries are covered in cobblestones, and mostly trafficked by donkeys and humans. Back in the day, the island attracted celebrities like Leonard Cohen and Sophia Loren, but was somehow forgotten over the years. That means that travellers to Hydra can have the chic yet almost rural island paradise more or less to themselves.`;
+
+        hydra.appendChild(newHydra);
+
+        return true;
+    }
+    
+    return false;   
+}
+
+function addParagraphIthaca()
+
+    {let ithaca = document.getElementById("Ithaca");
+    
+    if (ithaca)
+    {
+        let newIthaca = document.createElement("p");
+        newIthaca.textContent = `Most famous for being the home of Odysseus, and a prominent figure in Homer's "The Odyssey," Ithaca is said to have been inhabited since the 2nd millennium BC. Made up of two islands joined by a narrow strip of land, many visit it to see the legendary sites mentioned by Homer. However, Ithaca is more than its mythical counterpart, beckoning with secluded beaches, dramatic cliffs, beautiful olive groves, and sleepy fishing villages full of Byzantine churches and monasteries.`;
+
+        ithaca.appendChild(newIthaca);
+
+        return true;
+    }
+    
+    return false;   
+}
+
+function addParagraphGavdos()
+
+    {let gavdos = document.getElementById("Gavdos");
+    
+    if (gavdos)
+    {
+        let newGavdos = document.createElement("p");
+        newGavdos.textContent = `Near the more well-known Crete, Gavdos is the most southern island in Greece — and the most southern spot in Europe discounting the Canaries. Only accessible by ferry, the remote island has only about 50 permanent residents, and can feel like your private playground. Local legend has it that the island was the home of goddess Calypso, who kept Odysseus prisoner here. Today, a favorite tourist activity is to visit the spot believed to be her cave. Be warned, you won't find any luxury hotels here. While the romantically under-developed, super laid back island has a number of rooms for rent, those are limited, as the real draw here for many is the free, seaside camping.`;
+
+        gavdos.appendChild(newGavdos);
+
+        return true;
+    }
+    
+    return false;   
+}
+
 
 function Start ()
 {
@@ -187,7 +238,36 @@ function Start ()
     else{
         console.warn("The paragraph was NOT added to Milos.");
     }
+
+    let hydraParagraphSuccess = addParagraphHydra();
+
+    if(hydraParagraphSuccess){
+        console.log("The paragraph was sucessfully added to Hydra.");
+    }
+    else{
+        console.warn("The paragraph was NOT added to Hydra.");
+    }
+
+    let ithacaParagraphSuccess = addParagraphIthaca();
+
+    if(ithacaParagraphSuccess){
+        console.log("The paragraph was sucessfully added to Ithaca.");
+    }
+    else{
+        console.warn("The paragraph was NOT added to Ithaca.");
+    }
+
+    let gavdosParagraphSuccess = addParagraphGavdos();
+
+    if(gavdosParagraphSuccess){
+        console.log("The paragraph was sucessfully added to Gavdos.");
+    }
+    else{
+        console.warn("The paragraph was NOT added to Gavdos.");
+    }
+
 }
+
 
 window.addEventListener("load", Start);
 
