@@ -69,6 +69,58 @@ function addParagraphSpetses()
     return false;
 }
 
+function addParagraphAmorgos()
+
+    {let amorgos = document.getElementById("Amorgos");
+    
+    if (amorgos)
+    {
+        let newAmorgos = document.createElement("p");
+        newAmorgos.textContent = `Shipwrecks, sea caves and beautiful clear waters make Amorgos popular with snorkelers, but the mountainous island is the perfect compromise between unwinding and adventure, boasting beautiful beaches but also hiking, scuba diving and rock-climbing. One of the island's main attractions is the 11th-century cliffside monastery of Panayia Hozoviótissa, which is precariously carved into a cliff.`;
+
+        amorgos.appendChild(newAmorgos);
+
+        return true;
+    }
+    
+    return false;   
+}
+
+function addParagraphSyros()
+
+    {let syros = document.getElementById("Syros");
+    
+    if (syros)
+    {
+        let newSyros = document.createElement("p");
+        newSyros.textContent = `A favourite Athenian escape and former shipowners' vacation spot full of grand mansions, Syros is little known to foreigners. Famous for its neoclassical architecture and perfectly preserved heritage, its capital, Ermoupolis, was a 13th-century Venetian-built town and important trade and industrial centre, and boasts giant churches and beautiful villas, a stunning town hall, and labyrinthine streets and stairways.`;
+
+        syros.appendChild(newSyros);
+
+        return true;
+    }
+    
+    return false;   
+}
+
+function addParagraphMilos()
+
+    {let milos = document.getElementById("Milos");
+    
+    if (milos)
+    {
+        let newMilos = document.createElement("p");
+        newMilos.textContent = `This volcanic island, with catacombs and ancient iron mines to explore, is dramatically rugged, and famous for its stunning rock formations. Often likened to a moonscape, it's also known for its hot springs, the ancient Venus De Milo statue that was found here, and for its diversity of incredible beaches. Known as "the island of colours" it's home to around 80 beaches — some only accessible by boat — ranging from stunningly white, to striking black, and even unusual red and grey. However, each beach has the same Evian-clear turquoise waters, and is surrounded by a rugged mountain landscape.`;
+
+        milos.appendChild(newMilos);
+
+        return true;
+    }
+    
+    return false;   
+}
+
+
 function Start ()
 {
     console.log(`%App Started.`);
@@ -79,7 +131,7 @@ function Start ()
         console.log("The paragraph was sucessfully added to the Intro Paragraph.");
     }
     else{
-        console.warn("The paragraph was NOT added to the Intro Paragraph.")
+        console.warn("The paragraph was NOT added to the Intro Paragraph.");
     }
 
     let folegandrosParagraphSuccess = addParagraphFolegandros();
@@ -88,7 +140,7 @@ function Start ()
         console.log("The paragraph was sucessfully added to Folegandros.");
     }
     else{
-        console.warn("The paragraph was NOT added to Folegandros.")
+        console.warn("The paragraph was NOT added to Folegandros.");
     }
 
     let alonissosParagraphSuccess = addParagraphAlonissos();
@@ -97,7 +149,7 @@ function Start ()
         console.log("The paragraph was sucessfully added to Alonissos.");
     }
     else{
-        console.warn("The paragraph was NOT added to Alonissos.")
+        console.warn("The paragraph was NOT added to Alonissos.");
     }
 
     let spetsesParagraphSuccess = addParagraphSpetses();
@@ -106,7 +158,34 @@ function Start ()
         console.log("The paragraph was sucessfully added to Spetses.");
     }
     else{
-        console.warn("The paragraph was NOT added to Spetses.")
+        console.warn("The paragraph was NOT added to Spetses.");
+    }
+
+    let amorgosParagraphSuccess = addParagraphAmorgos();
+
+    if(amorgosParagraphSuccess){
+        console.log("The paragraph was sucessfully added to Amorgos.");
+    }
+    else{
+        console.warn("The paragraph was NOT added to Amorgos.");
+    }
+
+    let syrosParagraphSuccess = addParagraphSyros();
+
+    if(syrosParagraphSuccess){
+        console.log("The paragraph was sucessfully added to Syros.");
+    }
+    else{
+        console.warn("The paragraph was NOT added to Syros.");
+    }
+
+    let milosParagraphSuccess = addParagraphMilos();
+
+    if(milosParagraphSuccess){
+        console.log("The paragraph was sucessfully added to Milos.");
+    }
+    else{
+        console.warn("The paragraph was NOT added to Milos.");
     }
 }
 
