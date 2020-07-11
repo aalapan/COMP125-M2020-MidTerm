@@ -1,7 +1,9 @@
+
 "use strict";//IIFE (Immediately Invoked Function Expression)
 (function ()
 
-{function addParagraphIntroParagraph()
+{ 
+  function addParagraphIntroParagraph()
 
     {let IntroParagraph = document.getElementById("IntroParagraph");
     
@@ -171,6 +173,88 @@ function addParagraphGavdos()
     return false;   
 }
 
+function ValidateForm()
+{
+    let contactForm = document.forms[0];
+
+    if(contactForm)
+    {
+        contactForm.noValidate = true;
+
+        let errorMessage = document.getElementById("errorMessage");
+
+        let firstName = document.getElementById("firstName");
+        firstName.addEventListener("blur", (event) =>
+        {
+            if(firstName.length<2)
+            {
+                firstName.focus();
+                errorMessage.textContent = "First name not valid. Must be more than 2 characters.";
+                return false;
+            }
+            return true;
+        })
+
+        let lastName = document.getElementById("lastName");
+        lastName.addEventListener("blur", (event) => 
+        {
+                if(lastName.length<2)
+                {
+                    lastName.focus();
+                    errorMessage.textContent = "Last Name not valid. Must be more than 2 characters."; 
+                    return false;
+                }
+                return true;
+        })
+
+        let contactNumber = document.getElementById("contactNumber");
+        contactNumber.addEventListener("blur", (event) =>
+        {
+            let contactNumberRGEX = /^[\+]?[(]?[0-9]{3}[)]?[0-9]{3}[-\s\.]?[0-9]{4}$/im;
+            let contactNumberResult = contactNumberRGEX.test(contactNumber.value);
+
+            if(contactNumberResult == false)
+            {
+                contactNumber.focus();
+                errorMessage.textContent = "Please enter a valid contact number. Example:(416)123-4567"
+                return false;
+            }
+            return true;
+        })
+
+        let email = document.getElementById("email");
+        email.addEventListener("blur", (event) =>
+        {
+            let emailRGEX = /^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$/;
+            let emailResult = emailRGEX.test(email.value);
+
+            if(emailResult == false)
+            {
+                email.focus();
+                errorMessage.textContent = "E-mail entered was not valid. Please enter a valid e-mail"
+                return false;
+            }
+            return true;
+        })
+
+        let sendButton = document.getElementById("sendButton");
+
+        sendButton.addEventListener("click", (event) =>
+        {
+            event.preventDefault();
+            console.log("Send Button Clicked");
+            console.log("First Name: " + firstName.value);
+            console.log("Last Name: " + lastName.value);
+            console.log("Contact Number: " + contactNumber.value);
+            console.log("E-mail: " + email.value);
+            console.log("Your Message: " + yourMessage.value);
+            console.log("Form is successfully validated.");
+        })
+
+    }
+    return false
+}
+
 
 function Start ()
 {
@@ -265,6 +349,15 @@ function Start ()
     else{
         console.warn("The paragraph was NOT added to Gavdos.");
     }
+
+    let validateFormSuccess = validateForm();
+    if(validateFormSuccess){
+        console.log("The validation was successful.");
+    }
+    else{
+        console.log("The validation was NOT successful.");
+    }
+
 
 }
 
